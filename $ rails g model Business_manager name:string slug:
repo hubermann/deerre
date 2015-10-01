@@ -1,0 +1,1 @@
+$ rails g model Business_manager name:string slug:string user:references
