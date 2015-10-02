@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'business_managers/index'
+
+  get 'business_managers/new'
+
+  get 'business_managers/edit'
+
   get 'static_pages/home'
 
   get 'static_pages/faq'
