@@ -53,7 +53,13 @@
 
 						<% if user_signed_in? %>
 					    	<p>Current session: <%= current_user.email %></p>
+					    	<ul>
+                    		<li><%= link_to "Business_manager", business_managers_index_path %></li>
+               				</ul>
+
 					    <% end %>
+
+
 						
 
 					</div>

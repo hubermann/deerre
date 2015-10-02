@@ -8,11 +8,29 @@ class BusinessManagersController < ApplicationController
   	@business_manager = BusinessManager.where(user_id:current_user.id)
 
 	  	if @business_manager.count === 0 
+        #creo el BM por default
 	  		mybm = BusinessManager.new()
 	  		mybm.name = "My Businnes Manager"
 	  		mybm.user_id = current_user.id
 	  		mybm.save
+
+        #creo un grupo por default
+        mygroup = Group.new()
+        mygroup.name = "Default Group"
+        mygroup.business_manager_id = mybm.id
+        mygroup.save
+
+        #creo una cuenta por default
+        myAccount = Account.new()
+        myAccount.name = "My default account"
+        myAccount.group_id = mygroup.id
+        myAccount.save
+        
 	  	end
+
+    
+
+
   end
 
   def new
