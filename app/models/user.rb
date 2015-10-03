@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
 	#user_session
 	#current_member
 	#member_session
+	has_many :business_managers
 end

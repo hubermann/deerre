@@ -2,14 +2,9 @@
 <div class="row">
     <div class="col s12 m8 l8">
         <div class="card">
-            <h2>BusinessManagers#index</h2>
-			<p><%= @business_manager.count %></p>
-
-			<% @business_manager.each do |bm| %>
-			<p><%= link_to bm.name, business_manager_path(bm.id) %></p>
-            <h3>Groups</h3>
-            <p><%= bm.groups.count %></p>
-			<% end %>
+            <h2><%= @business_manager.name %></h2>
+			<p>cantidad <%= business_manager_groups(@business_manager.id) %></p>
+			
         </div>
     </div>
 

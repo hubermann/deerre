@@ -5,7 +5,7 @@ class BusinessManagersController < ApplicationController
 
   def index
   	#traigo el BM del user. Si no existe, creo uno.
-  	@business_manager = BusinessManager.where(user_id:current_user.id)
+  	@business_manager = BusinessManager.where(user_id: current_user.id)
 
 	  	if @business_manager.count === 0 
         #creo el BM por default
@@ -15,22 +15,25 @@ class BusinessManagersController < ApplicationController
 	  		mybm.save
 
         #creo un grupo por default
-        mygroup = Group.new()
-        mygroup.name = "Default Group"
-        mygroup.business_manager_id = mybm.id
-        mygroup.save
-
+        myGroup = Grupo.new()
+        myGroup.name = "My default Group"
+        myGroup.group_id = mybm.id
+        myGroup.save
+        
         #creo una cuenta por default
         myAccount = Account.new()
         myAccount.name = "My default account"
-        myAccount.group_id = mygroup.id
+        myAccount.group_id = myGroup.id
         myAccount.save
-        
+
 	  	end
 
+
+  end
+
+  def show
+    @business_manager = BusinessManager.where(business_manager_id params[:id])
     
-
-
   end
 
   def new
