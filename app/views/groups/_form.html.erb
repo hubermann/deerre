@@ -1,0 +1,17 @@
+
+<h2>New</h2>
+
+<% if @group.errors.full_messages.any? %>
+<% @group.errors.full_messages.each do |error_message| %>
+<%= error_message if @group.errors.full_messages.first == error_message %> <br />
+<% end %>
+<% end %>
+
+
+<%= form_for @group do |f| %>
+<%= f.label "name" %>
+<%= f.text_field :name %>
+
+
+<%= f.submit "Create" %>
+<% end %>

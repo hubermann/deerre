@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  get 'accounts/index'
+
+  get 'accounts/new'
+
+  get 'accounts/create'
+
+  get 'accounts/edit'
+
+  get 'accounts/update'
+
+  get 'accounts/destroy'
+
+  get 'groups/index'
+
+  get 'groups/new'
+
+  get 'groups/create'
+
+  get 'groups/edit'
+
+  get 'groups/update'
+
+  get 'groups/destroy'
+
   get 'business_managers/index'
 
   get 'business_managers/new'
@@ -18,6 +42,8 @@ Rails.application.routes.draw do
       resources :accounts
     end
   end
+
+  resources :groups
 
 
   # The priority is based upon order of creation: first created -> highest priority.
